@@ -26,11 +26,12 @@ def convert(file_h264, file_mp4):
     call([command], shell=True)
     print("\r\nRasp_Pi => Video Converted! \r\n")
 
+    #fill conn_str and container_name variables to azure blob account key and folder name respectively
 def upload_database():
     filename = time.strftime("%d-%m-%y %H:%M:%S.mp4")
     os.rename("/home/inviol/inviol_videos/tmp.mp4", '/home/inviol/inviol_videos/' + filename)
-    conn_str = "DefaultEndpointsProtocol=https;AccountName=julia;AccountKey=LFMmYTi4PyWTDMTubQ8lT1DXJJTciM6kJCMzx99ly1Q1XValj8tk47+u5K55FZFbeB9jrp+h5Q/3+ASt1fvR5w==;EndpointSuffix=core.windows.net"
-    container_name = "testvideos"
+    conn_str = ""
+    container_name = ""
 
     #blob_client should be set to the name of the video
     container_client = ContainerClient.from_connection_string(conn_str, container_name)
