@@ -30,8 +30,8 @@ def convert(file_h264, file_mp4):
 def upload_database():
     filename = time.strftime("%d-%m-%y %H:%M:%S.mp4")
     os.rename("/home/inviol/inviol_videos/tmp.mp4", '/home/inviol/inviol_videos/' + filename)
-    conn_str = ""
-    container_name = ""
+    conn_str = "raspberrypi-videos"
+    container_name = "DefaultEndpointsProtocol=https;AccountName=autstudentstorage;AccountKey=PM9IioXTd2SWoX/5vHjFIOKkpZTJXX6lyIZkLv5S+n5XIPCOwaU4dGdZalSsOs7TPD59dkz+it4s+AStnNMRBA==;EndpointSuffix=core.windows.net"
 
     #blob_client should be set to the name of the video
     container_client = ContainerClient.from_connection_string(conn_str, container_name)
