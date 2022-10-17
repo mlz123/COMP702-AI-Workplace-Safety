@@ -1,3 +1,4 @@
+from . import shapely_video
 import picamera
 import time
 from subprocess import call
@@ -37,6 +38,9 @@ def upload_database():
     container_client = ContainerClient.from_connection_string(conn_str, container_name)
     blob_client = container_client.get_blob_client(filename)
     
+    # Send video to inference script
+    shapely_video(blob_client)
+
     #Path file here
     with open('/home/inviol/inviol_videos/' + filename, 'rb') as data:
         blob_client.upload_blob(data)

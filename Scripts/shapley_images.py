@@ -10,11 +10,11 @@ COLORS = [(0, 255, 255), (255, 255, 0), (0, 255, 0), (255, 0, 0)]
 # Initialising lists for polygons and reading in the label names from the model
 polygons = []
 labeles = []
-with open('obj.names', 'r') as f:
+with open('/Users/juliaborlase/Desktop/uni_code/model_for_testing_PPE/obj.names', 'r') as f:
     labeles = [line.strip() for line in f.readlines()]
 
 # Model settings
-net = cv2.dnn_DetectionModel("cfg", "weights")
+net = cv2.dnn_DetectionModel("/Users/juliaborlase/Desktop/uni_code/model_for_testing_PPE/yolov4-tiny-safety-v1_6.cfg", "/Users/juliaborlase/Desktop/uni_code/model_for_testing_PPE/yolov4-tiny-safety-v1_6_best.weights")
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA_FP16)
 net.setInputSize(960, 544)

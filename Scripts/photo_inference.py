@@ -16,7 +16,7 @@ net.setInputSize(960, 544)
 net.setInputScale(1.0 / 255)
 net.setInputSwapRB(True)
 
-image = cv2.imread("/Users/juliaborlase/Desktop/uni_code/PPE-Image.jpeg")
+image = cv2.imread("shapely_test_images/person_noPPE.jpg")
 
 classes, confidences, boxes = net.detect(image, confThreshold=0.1, nmsThreshold=0.4)
 
