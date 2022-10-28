@@ -19,7 +19,7 @@ with open('/Users/juliaborlase/Desktop/uni_code/model_for_testing_PPE/obj.names'
     labeles = [line.strip() for line in f.readlines()]
 
 # Model settings
-net = cv2.dnn_DetectionModel("/Users/juliaborlase/Desktop/uni_code/model_for_testing_PPE/yolov4-tiny-safety-v1_6.cfg", "/Users/juliaborlase/Desktop/uni_code/model_for_testing_PPE/yolov4-tiny-safety-v1_6_best.weights")
+net = cv2.dnn_DetectionModel("COMP702-AI-Workplace-Safety/Model Weights/yolov4-tiny-obj.cfg", "COMP702-AI-Workplace-Safety/Model Weights/yolov4-tiny-obj_best.weights")
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA_FP16)
 net.setInputSize(960, 544)
@@ -27,13 +27,12 @@ net.setInputScale(1.0 / 255)
 net.setInputSwapRB(True)
 
 # Getting and setting the video 
-cap = cv2.VideoCapture("x 23-09-22 11_44_17.mp4")
-
-# Will set video once it is run
+cap = cv2.VideoCapture("COMP702-AI-Workplace-Safety/Test Videos/x 23-09-22 11_44_17.mp4")
 # cap = cv2.VideoCapture(shapely_video)
 
+
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (640,480))
+out = cv2.VideoWriter('COMP702-AI-Workplace-Safety/Labeled Videos/output.mp4', fourcc, 20.0, (1280,720))
 
 # While the video is be read
 while(cap.isOpened()):
