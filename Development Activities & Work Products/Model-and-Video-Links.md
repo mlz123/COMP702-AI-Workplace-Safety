@@ -14,3 +14,9 @@ Link: https://autuni-my.sharepoint.com/:f:/g/personal/zqj5293_autuni_ac_nz/EkJQK
 
 The model weights and config are avalible to view through this link, as they are to large to upload to GitHub. 
 Link: https://autuni-my.sharepoint.com/:f:/g/personal/zqj5293_autuni_ac_nz/Ekf3Luc1gedGr4aZux2ytZ8BjvoGZ6lz8hUJ2PBnqM2EHg?e=MdjLoE
+
+
+**Dataset**
+These dataset was collected before the model training phase. It included all the required elements (Mask, PPE). All the images are labelled. However, due to problems from formatting of images, it was not be used eventually. Two zipped folder for Mask data and PPE data has already uploaded on ondrive. Please visit by clicking the link below. 
+https://autunimy.sharepoint.com/:f:/r/personal/tfp3422_autuni_ac_nz/Documents/R%26D%20Dataset?csf=1&web=1&e=Ltcv7K
+
