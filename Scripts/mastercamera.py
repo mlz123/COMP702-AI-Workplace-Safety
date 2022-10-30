@@ -5,6 +5,10 @@ from subprocess import call
 import os
 from azure.storage.blob import ContainerClient
 import sys
+from . import event_api
+from . import shapley_video
+
+event_id = event_api.create_event
 
 def capture_video():
     camera = picamera.PiCamera()
@@ -29,17 +33,18 @@ def convert(file_h264, file_mp4):
 
     #fill conn_str and container_name variables to azure blob account key and folder name respectively
 def upload_database():
-    filename = time.strftime("%d-%m-%y %H:%M:%S.mp4")
+    # filename = time.strftime("%d-%m-%y %H:%M:%S.mp4")
+    filename = event_id
     os.rename("/home/inviol/inviol_videos/tmp.mp4", '/home/inviol/inviol_videos/' + filename)
-    conn_str = "raspberrypi-videos"
-    container_name = "DefaultEndpointsProtocol=https;AccountName=autstudentstorage;AccountKey=PM9IioXTd2SWoX/5vHjFIOKkpZTJXX6lyIZkLv5S+n5XIPCOwaU4dGdZalSsOs7TPD59dkz+it4s+AStnNMRBA==;EndpointSuffix=core.windows.net"
+    conn_str = "events"
+    container_name = ""
 
     #blob_client should be set to the name of the video
     container_client = ContainerClient.from_connection_string(conn_str, container_name)
-    blob_client = container_client.get_blob_client(filename)
+    blob_client = container_client.get_blob_client("vulcan/{}".format(filename))
     
     # Send video to inference script
-    shapely_video(blob_client)
+    shapley_video.get_video(blob_client)
 
     #Path file here
     with open('/home/inviol/inviol_videos/' + filename, 'rb') as data:
