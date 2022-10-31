@@ -20,5 +20,5 @@ Link: https://autuni-my.sharepoint.com/:f:/g/personal/zqj5293_autuni_ac_nz/Ekf3L
 
 
 These dataset was collected before the model training phase. It included all the required elements (Mask, PPE). All the images are labelled. However, due to problems from formatting of images, it was not be used eventually. Two zipped folder for Mask data and PPE data has already uploaded on ondrive. Please visit by clicking the link below. 
-https://autunimy.sharepoint.com/:f:/r/personal/tfp3422_autuni_ac_nz/Documents/R%26D%20Dataset?csf=1&web=1&e=Ltcv7K
+https://autuni-my.sharepoint.com/:f:/g/personal/tfp3422_autuni_ac_nz/Etw-2TmsqkVDj2qBZc5EWgEBMM1lsj51sH2AFMIIEyf-EQ?e=feEfMa
 
